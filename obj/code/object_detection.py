@@ -1,15 +1,17 @@
 #install_requires=['numpy', 'progressbar', 'requests', 'pillow','imutils']
 # import necessary packages
-import cvlib as cv
-from cvlib.object_detection import draw_bbox
-from cvlib.object_detection import line_to_speak
+import sys
+import os
 import cv2
+from main.object_detection import draw_bbox
+from main.object_detection import line_to_speak
+from main.object_detection import detect_common_objects
 
 # read input image
-image = cv2.imread(r'C:\Users\Ghanem\Downloads\spoon.jpeg')
+image = cv2.imread(r'.\images\spoon1.jpeg')
 
 # apply object detection
-bbox, label, conf = cv.detect_common_objects(image,model='yolov4')
+bbox, label, conf = detect_common_objects(image,model='yolov4')
 
 #line to speak
 text=line_to_speak(label)
