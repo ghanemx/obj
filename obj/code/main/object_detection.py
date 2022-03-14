@@ -186,7 +186,7 @@ def detect_common_objects(image, confidence=0.5, nms_thresh=0.3, model='yolov4',
             if write_conf:
                 label += ' ' + str(format(confidence[i] * 100, '.2f')) + '%'
 
-            cv2.rectangle(img, (bbox[i][0],bbox[i][1]), (bbox[i][2],bbox[i][3]), color, 2)
+            cv2.rectangle(img, (bbox[i][0],bbox[i][1]), (bbox[i][2],bbox[i][3]), color, 1)
 
-            cv2.putText(img, label, (bbox[i][0],bbox[i][1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+            cv2.putText(img, label, (bbox[i][0],bbox[i][1]+10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
 
